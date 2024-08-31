@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Toolz</title>
+  <meta name="description" content="Engage in fun and interactive math activities with Math Tools. We offer a variety of learning experiences and tools to enhance your learning experience, from practicing calculations to exploring logical thinking.">
+  <meta name="keywords" content="math games, math tools, calculators, learning math, interactive math">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+    #login-popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #login-form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    #login-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    #login-message {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <p>Another Great Site by R. Henry Warren</p>
+  <h1>Math Toolz</h1>
+
+  <div id="login-popup">
+    <div id="login-form">
+      <p id="login-message">A MathToolz Membership costs $1, contact <a href="mailto:hwarren@psd0620.org">hwarren@psd0620.org</a> for details.</p>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+  <p style="font-size: 12px; color: gray;">If you want more games email <a href="mailto:hwarren@psd0620.org">hwarren@psd0620.org</a> with a link from: htmlgames.com, html5games.com, codecayon.net/category/html5/games (You have to pay for games on codecayon), or https://www.onlinegames.io/t/embeddable-games-for-websites/</p>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/TrafficControl/')">Play Traffic Control!</a>
+  <a href="#" onclick="openGame('https://www.onlinegames.io/games/2023/unity2/cs-online/index.html')">Play Counter Strike Mini!</a>
+  <a href="#" onclick="openGame('https://www.onlinegames.io/games/2024/unity/highway-racer-pro/index.html')">Play Traffic Racer Pro!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/NeonNibblet/')">Play Neon Nibblet!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/SolitaireCollection/')">Play Solitaire Collection!</a>
+  <a href="#" onclick="openGame('https://www.onlinegames.io/games/2021/unity2/war-simulator/index.html')">Play War Sim!</a>
+  <a href="#" onclick="openGame('https://www.onlinegames.io/games/2021/unity/stack-fire-ball/index.html')">Play Tower Ball!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/Battleships/')">Play Battleships!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/NeonJump/')">Play Neon Jump!</a>
+  <a href="#" onclick="openGame('https://www.onlinegames.io/games/2021/unity3/legendary-sniper/index.html')">Play Ledgendary Sniper!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/Neon3/')">Play Neon3!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/TeslaDefense/')">Play Tesla Defense!</a>
+  <a href="#" onclick="openGame('https://cdn.htmlgames.com/AirportSniper/')">Play Airport Sniper<!/a>
+  <a href="#" onclick="openGame('https://nzp.gay')">Play COD Zombies!</a>
+  <a href="#" onclick="openGame('https://www.onlinegames.io/games/2023/unity2/guerrillas-io/index.html')">Play Guerrillas.io!</a>
+  <p style="font-size: 12px; color: gray;">More Math Tools Coming Soon!</p>
+  <script>
+    function openGame(url) {
+      var win = window.open();
+      win.document.body.style.margin = '0';
+      win.document.body.style.height = '100vh';
+      var iframe = win.document.createElement('iframe');
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '100%';
+      iframe.style.margin = '0';
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+      win.focus();
+    }
+
+function openLogin() {
+      document.getElementById("login-popup").style.display = "block";
+    }
+
+    function closeLogin() {
+      document.getElementById("login-popup").style.display = "none";
+    }
+
+    // Function to validate credentials (replace with actual logic)
+    function validateCredentials(username, password) {
+      // Read credentials from CSV file (implementation needed)
+      const credentials = readCredentialsFromCSV();
+
+      // Check username and password against credentials, ignoring case
+      for (const entry of credentials) {
+        if (entry.username.toLowerCase() === username.toLowerCase() && entry.password.toLowerCase() === password.toLowerCase()) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    function readCredentialsFromCSV() {
+      // Hardcoded credentials for demonstration
+      const credentials = [
+        { username: "rhenryw", password: "Psd308162" },
+        { username: "slattanzio", password: "Lattanzio8@me" }
+      ];
+
+      // Replace this with actual CSV reading logic using Papa Parse or similar
+      // Example using Papa Parse:
+      // Papa.parse("credentials.csv", {
+      //   complete: function(results) {
+      //     credentials = results.data;
+      //   }
+      // });
+
+      return credentials;
+    }
+
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      if (validateCredentials(username, password)) {
+        // Successful login, close the popup and proceed to the games
+        closeLogin();
+        // Replace with your actual game logic or redirect to a game page
+        console.log("Login successful!");
+      } else {
+        // Invalid credentials, display an error message
+        document.getElementById("login-message").textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+</body>
+</html>
